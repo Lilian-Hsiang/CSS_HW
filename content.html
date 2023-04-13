@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+        a,h2,p{
+            font-family: 'Ubuntu', sans-serif;
+        }
+        body {
+            /* background-color: rgb(237, 237, 237); */
+            margin: 0px;
+            font-size: 14px;
+        }
+        .header{
+            display:flex;
+            justify-content:space-between;
+            width:100%;
+            background-color: rgb(120, 86, 7);
+        }
+        /* .logo>img{
+            display:inline-block;
+            border:1px solid red;
+        } */
+        .logo{
+            /* display:inline-block; */
+            width:250px;
+            display:flex;
+        }
+        .logo>a{
+            background-color: rgb(120, 86, 7);
+            text-decoration: none;
+            color:rgb(236, 210, 104);
+            font-size:24px;
+            font-weight:bold;
+            text-align:center;
+            /* border:1px solid red; */
+            margin-top:0;
+            display:block;
+            padding-top:13px;
+            width:100%;
+
+        }
+        .menu-icon{
+            background-color:rgb(224, 157, 24);
+            width:3em;
+            height:45px;
+            color:rgb(255, 255, 255);
+            text-align:center;
+            line-height:35px;
+            border-radius:7px;
+            margin-top:5px;
+            display:none;
+        }
+
+        .navbar{
+            margin: 0;
+            padding: 0;
+            flex-grow:1;
+            
+        }
+        .navbar ul{
+            margin: 0;
+            padding: 0;
+            display:flex;
+            justify-content:flex-start;
+            background-color: rgb(236, 187, 52);
+            height:100%;
+            
+        }
+        .navbar ul li{
+            width:100%;
+            list-style-type: none;
+            border-right:1px dashed white;
+            line-height:44px;
+            margin-top:3px;
+            margin-bottom:3px;
+            /* border:1px solid red; */
+        }
+        .navbar ul li:last-child{
+            border:none;
+        }
+        .navbar ul li a{
+            color:white;
+            text-decoration:none;
+            display:block;
+            text-align:center;
+            line-height:44px;
+            /* border:1px solid red; */
+            margin-top:0;
+            font-size:20px;
+            font-weight:bold;
+
+        }
+        .navbar ul li a:hover{
+            color:rgb(251, 251, 251);
+            background-color: rgb(229, 143, 4);
+            font-size: 24px;
+            font-weight:bold;
+        }
+
+        /* content */
+        .container{
+            display:flex;
+            justify-content:space-around;
+            background-color: rgb(234, 207, 171);
+            padding:20px 20px;
+            box-sizing:border-box;
+        }
+        .my-photo>img{
+            /* background-color:lightsalmon; */
+            height:100%;
+            /* margin:0 50px; */
+            text-align: center;
+        }
+        .description{
+            background-color:rgb(101, 145, 111);
+            color:white;
+            width:50%;
+            /* height:100%; */
+            padding:30px 40px;
+            box-sizing:border-box;
+            letter-spacing: 2px;
+            line-height:25px;  
+            border-top:5px solid white;          
+            border-bottom:5px solid white;          
+        }
+        .description h2{
+            font-size:28px;
+        }
+        .description p{
+            font-size:16px;
+        }
+        #skills{
+            background-color: rgb(218, 191, 134);
+            background-color: rgb(243, 231, 201);
+            padding:0 30px;
+            box-sizing: border-box;
+        }
+        .shortcut{
+            list-style-type: none;
+            display:flex;
+            justify-content:space-between;
+        }
+        .shortcut li>img{
+            width:400px;
+            height:400px;
+            margin:20px 0;
+            box-shadow: 7px 7px 10px rgb(56, 56, 56);
+        }
+        .photo-list{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:space-between;
+            list-style-type: none;
+            width:100%;
+            box-sizing: border-box;
+        }
+        .photo-list li>img{
+            width:400px;
+            height:400px;
+            margin:20px 0;
+            box-shadow: 7px 7px 10px rgb(56, 56, 56);
+        }
+        .photo-list li>p{
+            box-sizing:border-box;
+            width:400px;
+            height:400px;
+            margin:20px 0;
+            background-color: rgb(106, 131, 110);
+
+            color:white;
+            padding:110px 60px;
+            box-shadow: 7px 7px 10px rgb(122, 121, 121);
+            border:4px solid white;
+            font-size: 14px;
+            line-height:20px;
+        }
+        .photo-list li>p:hover{
+            background-color: rgb(176, 130, 96);
+        }
+        #Photo{
+            background-color: rgb(243, 231, 201);
+            padding:0 30px;
+            box-sizing: border-box;
+        }
+        footer{
+            padding: 0;
+            margin: 0;
+            background-color: rgb(170, 120, 69);
+            color:white;
+            line-height:40px;
+            text-align: center;
+            font-size:18px;
+        }
+        @media screen and (max-width:500px){
+            header{
+                flex-wrap:wrap;
+                width:100%;
+            }
+            .navbar{
+                width:100%;
+            }
+            .navbar ul{
+                flex-direction:column;
+
+            }
+            .logo{
+                width:150px;
+                flex-grow:1;
+            }
+            .menu-icon{
+                display:block;
+                position:relative;
+                margin-top:5px;
+                margin-right:10px;
+                margin-bottom:5px;
+            }
+            .menu-icon::after{
+                position:absolute;
+                content: "";
+                height:0.4em;
+                width:1.8em;
+                top:0.6em;
+                left:0.6em;
+                border-bottom:1.2em double white;
+                border-top:0.4em solid white;
+                
+            }
+            #About{
+                width:100%;
+            }
+            .container{
+                flex-direction:column;
+                width:100%;
+                box-sizing:border-box;
+                padding:20px 20px;
+            }
+            .my-photo>img{
+                width:100%;
+            }
+            .description{
+                width:100%;
+            }
+            #skills{
+                width:100%;
+            }
+            .shortcut{
+                flex-direction: column;
+                width:100%;
+                align-items: center;
+            }
+            .photo-list{
+                flex-wrap:wrap;
+            }
+            .photo-list>li{
+                width:46%;
+                margin-right:2%;
+                margin-left:2%;
+            }
+            .photo-list>li>img{
+                width:100%;
+                height:auto;
+            }
+            .photo-list>li>p{
+                width:100%;
+                height:auto;
+                box-sizing: border-box;
+                padding:10px 10px;
+                border:2px solid white;
+            }
+            .p2{
+                background-color: rgb(176, 130, 96);
+            }
+            .photo-list>li:nth-child(1){
+                order:1;
+            }
+            .photo-list>li:nth-child(2){
+                order:2;
+            }
+            .photo-list>li:nth-child(3){
+                order:4;
+            }
+            .photo-list>li:nth-child(4){
+                order:3;
+            }
+            .photo-list>li:nth-child(5){
+                order:5;
+            }
+            .photo-list>li:nth-child(6){
+                order:6;
+            }
+        }
+</style>
+<body>
+    <header class="header">
+        <div class="logo">
+            <!-- <img src="img/rose.jpeg" alt="rose"> -->
+            <a href="#">Lilian's Factory</a></div>
+        <div class="menu-icon"></div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Experience</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <div id="Banner"></div>
+    <section id="About">
+        <div class="container">
+            <div class="my-photo"><img src="img/photo.jpeg" alt=""></div>
+            <div class="description">
+                <h2>About Lilian's Factory</h2>
+                <br>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam odio amet tempore eos cum aperiam vero aliquam earum illum obcaecati corrupti quis maiores ullam ipsam cumque soluta fugit possimus, magnam accusamus porro voluptatem delectus! Temporibus beatae aliquam, voluptates aliquid dolorem fugit explicabo porro! Totam esse repellat nostrum a quidem aut aliquam nesciunt exercitationem. Dolorum, alias sunt, quidem labore natus voluptas dignissimos corrupti excepturi, rerum quod debitis dolores magni animi sequi. Nobis voluptates in eos amet recusandae omnis optio blanditiis earum rem temporibus provident, distinctio, accusantium quibusdam deserunt architecto repellendus reiciendis repudiandae vel? Expedita voluptate distinctio quam perferendis quaerat aperiam atque.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, quis! Ab beatae ipsa perspiciatis non neque dicta, adipisci, incidunt veritatis accusantium sint at quas hic unde ut quam numquam. Facere quas impedit minus unde at, tempore placeat sint vitae, obcaecati, soluta eos incidunt. Consequatur, eius iusto illum iste dolorem quia, nostrum quos hic non voluptatem sapiente quo et vitae. Optio, provident libero. Iste repudiandae reiciendis dolor deleniti voluptate ipsam ab velit ea dignissimos quae nulla consectetur nobis alias nihil provident, maxime minima nesciunt qui accusamus magnam eligendi natus accusantium laudantium. Cupiditate cumque nesciunt esse maiores quas nam corrupti nisi necessitatibus.</p>
+            </div>
+        </div>
+    </section>
+    <section id="skills">
+        <ul class="shortcut">
+            <li><img src="img/skill1.jpeg" alt=""></li>
+            <li><img src="img/skill2.jpeg" alt=""></li>
+            <li><img src="img/skill3.jpeg" alt=""></li>
+        </ul>
+    </section>
+    <section id="Photo">
+        <ul class="photo-list">
+            <li><img src="img/img1.jpeg" alt="img1"></li>
+            <li>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, animi dolorem assumenda corrupti laudantium illum explicabo veritatis cum doloribus consequuntur, omnis facere, unde distinctio ab atque facilis! Similique, nesciunt.</p>
+            </li>
+            <li><img src="img/img2.jpeg" alt="img2"></li>
+            <li>
+                <p class="p1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus porro quo iusto veritatis explicabo asperiores minima perferendis impedit illo suscipit nisi fugit numquam nesciunt rem, eius ipsa corporis?</p>
+            </li>
+            <li><img src="img/img3.jpeg" alt="img3"></li>
+            <li>
+                <p class="p2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam assumenda consequuntur obcaecati eaque aliquid explicabo perspiciatis voluptatibus fuga corrupti omnis deserunt adipisci doloribus perferendis ullam ipsum repellendus rerum ut facere, nemo animi esse maiores. Fugit hic libero enim inventore qui.</p>
+            </li>
+        </ul>
+    </section>
+    <footer>
+        <p>Copyright&copy; 2023 Lilian's_Factory.com</p>
+    </footer>
+    
+</body>
+</html>
